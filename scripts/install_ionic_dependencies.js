@@ -2,6 +2,7 @@ const helpers = require('./helpers');
 const DEST_PATH = process.argv[2];
 
 const shouldInstallIonicDependencies = function () {
+    const path = require('path');
     const fs = require('fs');
     // const packageFilePath = `${process.cwd()}/../../../package.json`;
     const projectRoot = path.resolve(__dirname, '..', '..', '..');
