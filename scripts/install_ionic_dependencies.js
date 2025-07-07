@@ -3,7 +3,9 @@ const DEST_PATH = process.argv[2];
 
 const shouldInstallIonicDependencies = function () {
     const fs = require('fs');
-    const packageFilePath = `${process.cwd()}/../../../package.json`;
+    // const packageFilePath = `${process.cwd()}/../../../package.json`;
+    const projectRoot = path.resolve(__dirname, '..', '..', '..');
+    const packageFilePath = path.join(projectRoot, 'package.json');
     if (!helpers.fileExists(packageFilePath)) {
         helpers.logWarning('package.json was not found.');
         helpers.logWarning('Ionic dependencies omission cannot be safely skipped.');
@@ -34,7 +36,9 @@ const shouldInstallIonicDependencies = function () {
 
 const installIonicDependencies = function () {
     const path = require('path');
-    const fullDestPath = `${path.dirname(process.cwd())}/${DEST_PATH}`;
+    // const fullDestPath = `${path.dirname(process.cwd())}/${DEST_PATH}`;
+    const pluginRoot = path.resolve(__dirname, '..');
+    const fullDestPath = path.join(pluginRoot, DEST_PATH);
     try {
         process.chdir(fullDestPath);
     } catch (error) {
