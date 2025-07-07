@@ -132,4 +132,7 @@
 	<!-- COPY FCM CONFIG FILES TO PLATFORM BEFORE COMPILING -->
 	<hook src="scripts/copy_google_service_files.js" type="after_prepare" />
 	<hook src="scripts/copy_google_service_files.js" type="after_plugin_add" />
+	<hook src="scripts/install_ionic_dependencies.js" type="after_plugin_install" />
+	<hook src="scripts/install_ionic_dependencies.js" type="after_plugin_install" spec="ionic/ngx" />
+	<hook src="scripts/install_ionic_dependencies.js" type="after_plugin_install" spec="ionic/v4" />
 </plugin>
